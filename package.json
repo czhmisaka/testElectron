@@ -1,38 +1,42 @@
 {
-  "name": "electron-vue-vite",
-  "version": "2.0.0",
-  "main": "dist-electron/main/index.js",
-  "description": "Really simple Electron + Vue + Vite boilerplate.",
-  "author": "草鞋没号 <308487730@qq.com>",
-  "license": "MIT",
-  "private": true,
-  "keywords": [
-    "electron",
-    "rollup",
-    "vite",
-    "vue3",
-    "vue"
-  ],
-  "debug": {
-    "env": {
-      "VITE_DEV_SERVER_URL": "http://desktop.czht.top"
+    "name": "photo-manager",
+    "version": "2.0.0",
+    "main": "dist-electron/main/index.js",
+    "description": "Really simple Electron + Vue + Vite boilerplate.",
+    "author": "czh",
+    "license": "MIT",
+    "private": true,
+    "keywords": [
+        "electron",
+        "rollup",
+        "vite",
+        "vue3",
+        "vue"
+    ],
+    "debug": {
+        "env": {
+            "VITE_DEV_SERVER_URL": "http://desktop.czht.top"
+        }
+    },
+    "scripts": {
+        "dev": "vite",
+        "build": "vue-tsc --noEmit && vite build && electron-builder",
+        "buildWin": "vue-tsc --noEmit && vite build && electron-packager ./ --platform=win32 --arch=ia32 --out=./release-builds --overwrite",
+        "preview": "vite preview"
+    },
+    "devDependencies": {
+        "@vitejs/plugin-vue": "^4.3.3",
+        "electron": "^26.0.0",
+        "electron-builder": "^24.6.3",
+        "typescript": "^5.1.6",
+        "vite": "^4.4.9",
+        "vite-plugin-electron": "^0.14.0",
+        "vite-plugin-electron-renderer": "^0.14.5",
+        "vue": "^3.3.4",
+        "vue-tsc": "^1.8.8"
+    },
+    "dependencies": {
+        "electron-packager": "^17.1.2",
+        "electron-winstaller": "^5.1.0"
     }
-  },
-  "scripts": {
-    "dev": "vite",
-    "build": "vue-tsc --noEmit && vite build && electron-builder",
-    "buildWin": "vue-tsc --noEmit && vite build && electron-packager .myapp --platform=win32 --arch=ia32 --out=./release-builds --overwrite",
-    "preview": "vite preview"
-  },
-  "devDependencies": {
-    "@vitejs/plugin-vue": "^4.3.3",
-    "electron": "^26.0.0",
-    "electron-builder": "^24.6.3",
-    "typescript": "^5.1.6",
-    "vite": "^4.4.9",
-    "vite-plugin-electron": "^0.14.0",
-    "vite-plugin-electron-renderer": "^0.14.5",
-    "vue": "^3.3.4",
-    "vue-tsc": "^1.8.8"
-  }
 }
