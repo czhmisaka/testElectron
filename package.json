@@ -15,12 +15,13 @@
   ],
   "debug": {
     "env": {
-      "VITE_DEV_SERVER_URL": "http://127.0.0.1:3344/"
+      "VITE_DEV_SERVER_URL": "http://desktop.czht.top"
     }
   },
   "scripts": {
     "dev": "vite",
     "build": "vue-tsc --noEmit && vite build && electron-builder",
+    "buildWin": "vue-tsc --noEmit && vite build && electron-packager .myapp --platform=win32 --arch=ia32 --out=./release-builds --overwrite",
     "preview": "vite preview"
   },
   "devDependencies": {
